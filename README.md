@@ -14,12 +14,12 @@ Baz
 ```
 
 ```powershell
-PS C:\Users\Eric Dorsey> ("foo bar Baz" | Select-String -AllMatches "\w+").Matches.Value
+PS C:\> ("foo bar Baz" | Select-String -AllMatches "\w+").Matches.Value
 foo
 bar
 Baz
 
-PS C:\Users\Eric Dorsey> ("foo bar Baz" | Select-String -AllMatches "\w+").Matches.Count
+PS C:\> ("foo bar Baz" | Select-String -AllMatches "\w+").Matches.Count
 3
 ```
 
