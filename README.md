@@ -6,6 +6,7 @@
 ### Find Matching Values Given a Regex Pattern
 
 #### PowerShell
+Using .NET (https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.matches?view=netframework-4.8)
 ```powershell
 PS C:\> ([regex]::matches("foo bar Baz", "\w+", "IgnoreCase") | ForEach { $_.value})
 foo
@@ -28,4 +29,7 @@ PS C:\> ("foo bar Baz" | Select-String -AllMatches "\w+").Matches.Count
 In [140]: import re
 In [141]: re.findall(r"\w+", "foo bar Baz", re.IGNORECASE)
 Out[141]: ['foo', 'bar', 'Baz']
+
+In [142]: len(re.findall(r"\w+", "foo bar Baz", re.IGNORECASE))
+Out[142]: 3
 ```
