@@ -1,5 +1,7 @@
 ### Links
 * https://www.johndcook.com/blog/powershell_perl_regex/
+* https://stackoverflow.com/questions/43421755/powershell-regex-match-only-matching-once/43421819#43421819
+
 
 ### Find Matching Values Given a Regex Pattern
 
@@ -9,6 +11,16 @@ PS C:\> ([regex]::matches("foo bar Baz", "\w+", "IgnoreCase") | ForEach { $_.val
 foo
 bar
 Baz
+```
+
+```powershell
+PS C:\Users\Eric Dorsey> ("foo bar Baz" | Select-String -AllMatches "\w+").Matches.Value
+foo
+bar
+Baz
+
+PS C:\Users\Eric Dorsey> ("foo bar Baz" | Select-String -AllMatches "\w+").Matches.Count
+3
 ```
 
 #### Python
